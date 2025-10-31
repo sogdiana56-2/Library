@@ -20,7 +20,7 @@ def time_message(request):
     elif 15 <= hour < 20:
         message = "Сейчас вечер "
     else:
-        message = "НОЧЬ 🌙"
+        message = "НОЧЬ"
 
     return HttpResponse(message)
 
