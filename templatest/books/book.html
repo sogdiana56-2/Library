@@ -8,13 +8,15 @@
 <body>
     <h1>Все книги</h1>
     <ul>
+         {% for i in book %}
         <!-- Цикл вставить тут -->
         <li>
-            <img src="" alt="" width="450" height="400">
-            <h2>Укажите название книги</h2>
-            <time datetime="">27 октября 2025</time>
-            <a href="firm_detail.html">Подробнее</a>
+            <img src="" alt="{ i.image.url }" alt= "{{ i.title }}">
+            <h2>{{ i.title }}</h2>
+            <time datetime="{{ i.created_at }}"></time>
+            <a href="/book_list/{{ i.id }}/">Подробнее</a>
         </li>
+           {% endfor %}
         <hr>
         <!-- Цикл закрыть тут -->
 
