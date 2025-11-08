@@ -1,0 +1,7 @@
+<h1>Products in {{ category.name }}</h1>
+<ul>
+    {% for product in products %}
+        <li>{{ product.name }} - ${{ product.price }}</li>
+    {% endfor %}
+</ul>
+<a href="{% url 'category_list' %}">Back to Categories</a>
