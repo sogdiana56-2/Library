@@ -1,5 +1,7 @@
 from django.contrib import admin
-from django.urls import path, include, views 
+from django.urls import path, include
+from django.urls import path, include
+from ls_wikiki import views  
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -11,5 +13,5 @@ urlpatterns = [
 ]
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home),  # корень сайта
+    path('', views.home),  
 ]
