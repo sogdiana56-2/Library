@@ -1,0 +1,12 @@
+<form method="GET">
+    <input type="text" name="q" placeholder="Поиск книг..." value="{{ q }}">
+    <button type="submit">Искать</button>
+</form>
+
+<ul>
+{% for b in books %}
+    <li>{{ b.title }}</li>
+{% empty %}
+    <li>Ничего не найдено</li>
+{% endfor %}
+</ul>

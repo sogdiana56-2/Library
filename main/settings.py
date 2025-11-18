@@ -31,9 +31,11 @@ INSTALLED_APPS = [
     'store',
     'users',
     'captcha',
+    'ls_wikiki',
 ]
 
-AUTH_USER_MODEL = 'users.CustomUser',
+AUTH_USER_MODEL = 'users.CustomUser'
+
 
 
 
