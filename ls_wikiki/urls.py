@@ -1,11 +1,12 @@
-from django.contrib import admin
-from django.urls import path, include
-from django.http import HttpResponse
-
-def home_view(request):
-    return HttpResponse("Привет! Это главная страница.")
+from django.urls import path
+from . import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', home_view),  # <-- вот корень сайта
+    path('all_things/', views.AllThingsView.as_view(), name='all_things'),
+    
+    path('dress/', views.DressView.as_view(), name='dress'),
+    
+    path('shoes/', views.ShoesView.as_view(), name='shoes'),
+    
+    path('outwear/', views.OutwearView.as_view(), name='outwear'),
 ]

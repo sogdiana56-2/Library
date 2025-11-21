@@ -1,0 +1,24 @@
+<h1>Все</h1>
+
+<nav class="categories">
+    <a href="{% url 'dress' %}">#платья</a>
+    <a href="{% url 'shoes' %}">#обувь</a>
+    <a href="{% url 'outwear' %}">#верхняя одежда</a>
+</nav>
+
+<ul class="products">
+    {% for i in things %}
+    <li class="product-item">
+        <h2>{{ i.title }}</h2>
+
+        <p class="tags">
+            {% for tag in i.tags.all %}
+                <span class="tag">{{ tag.name }}</span>
+            {% empty %}
+                <span class="no-tags">Тегов нет</span>
+            {% endfor %}
+        </p>
+
+    </li>
+    {% endfor %}
+</ul>
