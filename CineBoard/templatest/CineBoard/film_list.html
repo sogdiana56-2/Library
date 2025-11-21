@@ -1,0 +1,32 @@
+<h2>Фильмы</h2>
+
+<!-- Поиск -->
+<form method="get">
+    <input type="text" name="q" placeholder="Поиск по названию" value="{{ request.GET.q }}">
+    <button type="submit">Искать</button>
+</form>
+
+<!-- Фильтрация по жанру -->
+<form method="get">
+    <select name="genre" onchange="this.form.submit()">
+        <option value="">Все жанры</option>
+
+        <option value="драма">Драма</option>
+        <option value="комедия">Комедия</option>
+        <option value="боевик">Боевик</option>
+        <option value="ужасы">Ужасы</option>
+        <option value="фантастика">Фантастика</option>
+    </select>
+</form>
+
+<a href="{% url 'film_add' %}">Добавить фильм</a>
+
+<ul>
+{% for film in films %}
+    <li>
+        <strong>{{ film.title }}</strong> — {{ film.genre }}
+        <a href="{% url 'film_edit' film.pk %}">✏️</a>
+        <a href="{% url 'film_delete' film.pk %}">🗑️</a>
+    </li>
+{% endfor %}
+</ul>
